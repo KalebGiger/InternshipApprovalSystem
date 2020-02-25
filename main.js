@@ -7,8 +7,6 @@ const infoPage = require('./pages/infoPage')
 const select = require('./components/select')
 
 let studentArray = [];
-let gradeArray = [];
-let page;
 
 function handleAddStudent(student) {
     studentArray.push(student)
