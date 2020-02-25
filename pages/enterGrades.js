@@ -1,7 +1,7 @@
 'use strict';
 
 const prompts = require('prompts');
-const question = require('../question')
+const question = require('../components/question')
 
 function enterGrades(handleAddStudent, control) {
 

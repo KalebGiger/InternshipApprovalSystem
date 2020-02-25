@@ -1,7 +1,7 @@
 'use strict';
 
 const prompts = require('prompts');
-const question = require('./question');
+const question = require('./components/question');
 const enterGrades = require('./pages/enterGrades')
 const infoPage = require('./pages/infoPage')
 const select = require('./components/select')
@@ -49,20 +49,10 @@ const tabs =
         }
     ]
 
-// const classes = ["CSC141", "CSC142", "CSC240", "CSC241"]
-
-// const nameQuestion =
-//     question('text', 'name', 'Name', value => value ? true : `Enter a name to proceed.`)
-
-// const classQuestions = classes.map((c, index) =>
-//     question('number', c, c + " Grade", value => value < 0 ? `Please enter a valid grade.` : true, index));
-
-// let questions = classQuestions.unshift(nameQuestion);
-
 function control() {
     (async () => {
         const response = await prompts(select('tabs', '', tabs));
-        handlePageChange(response.tab)
+        handlePageChange(response.tabs)
     })();
 }
 
