@@ -15,7 +15,7 @@ function handleAddStudent(student) {
 
 function handlePageChange(value) {
     if (value === 'info') {
-        info();
+        infoPage(control);
     }
 
     if (value === 'enterGrades') {
