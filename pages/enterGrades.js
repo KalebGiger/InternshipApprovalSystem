@@ -17,8 +17,6 @@ function enterGrades(handleAddStudent, control) {
 
     (async () => {
         const response = await prompts(classQuestions);
-        console.log(response)
-
         handleAddStudent(response);
         control();
         //console.log(studentArray)
