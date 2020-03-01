@@ -5,14 +5,30 @@ const question = require('./components/question');
 const enterGrades = require('./pages/enterGrades')
 const infoPage = require('./pages/infoPage')
 const select = require('./components/select')
+const viewGrades = require('./pages/viewGrades')
+const calculatePartialGrade = require('./functions/calculatePartialGrade');
 
 let studentArray = [];
 
 function handleAddStudent(student) {
+    var grades = [];
+    for (const property in student) {
+        if (property != 'name') {
+            grades.push(student[property]);
+        }
+      }
+
+    student.gpa = calculatePartialGrade(grades);
     studentArray.push(student)
     console.log(studentArray)
 }
-
+function handleViewGrades(){
+    studentArray.forEach(student => {
+        if(student.gpa>=2.5){
+            console.log(student.name + ' has GPA of ' + student.gpa);
+        }
+    });
+}
 function handlePageChange(value) {
     if (value === 'info') {
         infoPage(control);
@@ -23,7 +39,7 @@ function handlePageChange(value) {
     }
 
     if (value === 'viewGrades') {
-        viewGrades();
+        viewGrades(handleViewGrades, control);
     }
 }
 
