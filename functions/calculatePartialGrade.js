@@ -5,7 +5,8 @@ function calculatePartialGrade(grades) {
     grades.forEach(element => {
         total+= convertToGpa(element);
     });
-    return total/grades.length;
+    return parseFloat(total/grades.length).toFixed(2);
+
 }
 
 function convertToGpa(grade){
