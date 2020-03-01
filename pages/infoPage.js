@@ -2,16 +2,22 @@
 
 const prompts = require('prompts');
 const question = require('../components/question')
+const select = require('../components/select')
 
-function infoPage(handleAddStudent, control) {
+function infoPage(control) {
 
-    const backButton = question('select', 'back', '')
+    const backButton =
+        [
+            {
+                title: 'Back',
+                description: 'Go back to tabs'
+            }
+        ];
+
 
     (async () => {
-        const response = await prompts(backButton);
-        console.log(response)
-
-        handleAddStudent(response);
+        console.log("This is an internship approval app.")
+        const response = await prompts(select('back', '', backButton));
         control();
         //console.log(studentArray)
     })();
