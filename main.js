@@ -5,6 +5,7 @@ const question = require('./components/question');
 const enterGrades = require('./pages/enterGrades')
 const infoPage = require('./pages/infoPage')
 const select = require('./components/select')
+const viewGrades = require('./pages/viewGrades')
 
 let studentArray = [];
 
