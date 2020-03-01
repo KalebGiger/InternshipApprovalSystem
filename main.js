@@ -22,7 +22,13 @@ function handleAddStudent(student) {
     studentArray.push(student)
     console.log(studentArray)
 }
-
+function handleViewGrades(){
+    studentArray.forEach(student => {
+        if(student.gpa>=2.5){
+            console.log(student.name + ' has GPA of ' + student.gpa);
+        }
+    });
+}
 function handlePageChange(value) {
     if (value === 'info') {
         info();
@@ -33,7 +39,7 @@ function handlePageChange(value) {
     }
 
     if (value === 'viewGrades') {
-        viewGrades();
+        viewGrades(handleViewGrades, control);
     }
 }
 

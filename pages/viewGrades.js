@@ -2,7 +2,9 @@
 
 const calculatePartialGrade = require('../functions/calculatePartialGrade');
 
-function viewGrades() {
+function viewGrades(handleViewGrades, control) {
+    handleViewGrades();
+    control();
 }
 
 module.exports = viewGrades;

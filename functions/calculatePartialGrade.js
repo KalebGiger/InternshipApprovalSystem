@@ -56,7 +56,9 @@ function convertToGpa(grade){
         
         return 4.00;
     }
-
+    else {
+        return 0;
+    }
 }
 
 module.exports = calculatePartialGrade;
