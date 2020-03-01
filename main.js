@@ -16,15 +16,15 @@ function handleAddStudent(student) {
         if (property != 'name') {
             grades.push(student[property]);
         }
-      }
+    }
 
     student.gpa = calculatePartialGrade(grades);
     studentArray.push(student)
     console.log(studentArray)
 }
-function handleViewGrades(){
+function handleViewGrades() {
     studentArray.forEach(student => {
-        if(student.gpa>=2.5){
+        if (student.gpa >= 2.5) {
             console.log(student.name + ' has GPA of ' + student.gpa);
         }
     });
